@@ -8,7 +8,7 @@ We can model Sudoku as a constraint satisfaction problem (CSP), in the form of a
 ## General Idea
 Having modelled the Sudoku puzzle as a CSP, we can then make use of existing CSP algorithms to solve this problem. In `sudoku_solver.py`, we first enforce node consistency on the graph, based on the unary constraints of each cell. Then, we carry out the AC-3 algorithm to ensure that the graph is arc consistent, using the binary constraints of each <neighbour, neighbour> pair. Finally, we carry out a Backtracking Search to find a suitable assignment of values for each of the 81 cells.
 
-Additional improvements are made to speed up each call of `backtrack()`:  
+Additional improvements are made in `backtrack()` to speed up the solving process:  
 * An unassigned cell is selected using the minimum remaining value (MRV) heuristic, and then the degree heuristic to break ties
 * After choosing an unassigned cell, we assign values to the cell in an ordered sequence, based on the least-constraining values heuristic
 * After a value is assigned to a cell, we call the `inference()` method to make more inferences about the values in other cells, based on this new assignment. This involves carrying out the AC-3 algorithm, which would allow us to maintain the arc consistency of the graph each time an assignment is made.
