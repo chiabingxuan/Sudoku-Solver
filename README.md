@@ -11,7 +11,7 @@ Having modelled the Sudoku puzzle as a CSP, we can then make use of existing CSP
 Additional improvements are made in `backtrack()` to speed up the solving process:  
 * An unassigned cell is selected using the minimum remaining value (MRV) heuristic, and then the degree heuristic to break ties
 * After choosing an unassigned cell, we assign values to the cell in an ordered sequence, based on the least-constraining values heuristic
-* After a value is assigned to a cell, we call the `inference()` method to make more inferences about the values in other cells, based on this new assignment. This involves carrying out the AC-3 algorithm, which would allow us to maintain the arc consistency of the graph each time an assignment is made.
+* After a value is assigned to a cell, we call the `inference()` method to make more inferences about the values in other cells, based on this new assignment. This involves carrying out the AC-3 algorithm, which would allow us to maintain the arc consistency of the graph each time an assignment is made
 
 ## How to Use
 When `sudoku_solver.py` is being run, it requires the user to input a file path corresponding to a .txt file that contains an unsolved Sudoku puzzle. Empty cells are represented by underscores ("_") and cells in the same row are separated by commas (","). An example of a possible .txt file, named `sample_puzzle.txt`, is provided in this repository. Following this, the program will print out a solution to this puzzle (if there are multiple solutions, it will print out only one of the possible solutions). If there are no solutions, the program will simply print out the message "No solution".
