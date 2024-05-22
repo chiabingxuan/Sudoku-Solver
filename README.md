@@ -10,7 +10,7 @@ Having modelled the Sudoku puzzle as a CSP, we can then make use of existing CSP
 
 Additional improvements are made to speed up each call of `backtrack()`:  
 * An unassigned cell is selected using the minimum remaining value (MRV) heuristic, and then the degree heuristic to break ties
-* For a cell chosen to be assigned, we assign values to the cell in an ordered sequence, based on the least-constraining values heuristic
+* After choosing an unassigned cell, we assign values to the cell in an ordered sequence, based on the least-constraining values heuristic
 * After a value is assigned to a cell, we call the `inference()` method to make more inferences about the values in other cells, based on this new assignment. This involves carrying out the AC-3 algorithm, which would allow us to maintain the arc consistency of the graph each time an assignment is made.
 
 ## How to Use
