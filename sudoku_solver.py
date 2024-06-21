@@ -215,7 +215,7 @@ class SudokuSolver(object):
 
 
 if __name__ == "__main__":
-    filename = input("Enter file path to a Sudoku puzzle (in .txt format): ")
+    filename = input("Enter file name of a Sudoku puzzle (in .txt format): ")
     solver = SudokuSolver(filename)
     solver.solve()
     end = input("Enter any key to quit: ")
