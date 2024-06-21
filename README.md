@@ -14,4 +14,21 @@ Additional improvements are made in `backtrack()` to speed up the solving proces
 * After a value is assigned to a cell, we call the `inference()` method to make more inferences about the values in other cells, based on this new assignment. This involves carrying out the AC-3 algorithm, which would allow us to maintain the arc consistency of the graph each time an assignment is made
 
 ## How to Use
-When `sudoku_solver.py` is being run, it requires the user to input a file path corresponding to a .txt file that contains an unsolved Sudoku puzzle. Empty cells are represented by underscores ("_") and cells in the same row are separated by commas (","). An example of a possible .txt file, named `sample_puzzle.txt`, is provided in this repository. Following this, the program will print out a solution to this puzzle (if there are multiple solutions, it will print out only one of the possible solutions). If there are no solutions, the program will simply print out the message "No solution".
+1. Clone the repository as follows:
+```
+git clone https://github.com/chiabingxuan/Sudoku-Solver.git
+```
+2. Place your Sudoku puzzle (.txt file) inside the folder containing this cloned repository. `sample_puzzle.txt` is an example of such a puzzle, where empty cells are represented by underscores ("_") and cells in the same row are separated by commas (",").
+3. Set your working directory to this folder:
+```
+cd Sudoku-Solver
+```
+4. Run the Sudoku solver:
+```
+python sudoku_solver.py
+```
+5. Following this, the program will require the user to input the file name of the Sudoku puzzle. For example, if you wish to solve the Sudoku puzzle in `sample_puzzle.txt`:
+```
+Enter file name of a Sudoku puzzle (in .txt format): sample_puzzle.txt
+```
+6. The program will then print out a solution to this puzzle (if there are multiple solutions, it will print out only one of the possible solutions). If there are no solutions, the program will simply print out the message "No solution".
